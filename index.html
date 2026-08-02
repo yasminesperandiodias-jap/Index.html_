@@ -1,362 +1,712 @@
-    <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="pt-br">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Plain - Brechó </title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Bloom Brechó</title>
 
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-  
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 
-  <style>
-    /* ESTILOS DE COR E FONTE */
-    body {
-      font-family: 'Poppins', sans-serif;
-      background-color: #F5EBE0;
-      color: #4A3E3D;
-      padding-top: 76px; /* Espaço para a navbar fixa não cobrir o topo */
-    }
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
-    .navbar-custom {
-      background-color: #DDA15E !important;
-    }
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
-    .navbar-brand {
-      font-size: 28px !important;
-      font-weight: 700 !important;
-    }
+<style>
 
-    .card {
-      background-color: #FAF3E0;
-      border-color: #E6CCB2;
-    }
+body{
+font-family:'Poppins',sans-serif;
+background:#FFFDF4;
+color:#7A5C61;
+padding-top:76px;
+}
 
-    /* BOTÕES PERSONALIZADOS */
-    .btn-success {
-      background-color: #BC6C25 !important;
-      border-color: #BC6C25 !important;
-      color: #FFFFFF !important;
-    }
+.navbar-custom{
+background:#FFDDE1 !important;
+}
 
-    .btn-primary {
-      background-color: #7F5539 !important;
-      border-color: #7F5539 !important;
-      color: #FFFFFF !important;
-    }
+.navbar-brand{
+font-size:28px;
+font-weight:700;
+color:#7A5C61 !important;
+}
 
-    .btn-secondary {
-      background-color: #9C6644 !important;
-      border-color: #9C6644 !important;
-      color: #FFFFFF !important;
-    }
+.card{
+background:#FFF8F2;
+border:1px solid #FFE8A3;
+}
 
-    /* CENTRALIZAÇÕES */
-    .breadcrumb {
-      justify-content: center;
-    }
+.btn-primary{
+background:#F8B6C2 !important;
+border:#F8B6C2 !important;
+color:#fff;
+}
 
-    .card-body {
-      text-align: center;
-    }
+.btn-success{
+background:#F4D35E !important;
+border:#F4D35E !important;
+color:#7A5C61;
+}
 
-    /* Logo section */
-    .logo-section {
-      text-align: center;
-      padding: 40px 20px;
-      background: linear-gradient(135deg, #DDA15E 0%, #BC6C25 100%);
-    }
+.btn-secondary{
+background:#FFE8A3 !important;
+border:#FFE8A3 !important;
+color:#7A5C61;
+}
 
-    .logo-section h1 {
-      font-size: 72px;
-      font-weight: 700;
-      color: white;
-      margin: 0;
-      text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
-    }
+.card-body{
+text-align:center;
+}
 
-    .logo-section p {
-      font-size: 20px;
-      color: #FAF3E0;
-      margin-top: 10px;
-    }
+.breadcrumb{
+justify-content:center;
+}
 
-    /* SVG Container */
-    .svg-container {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      background: linear-gradient(135deg, #DDA15E 0%, #BC6C25 100%);
-      height: 250px;
-      border-radius: 8px 8px 0 0;
-    }
+.logo-section{
+background:linear-gradient(135deg,#FFDDE1,#FFF2A8);
+padding:45px 20px;
+text-align:center;
+}
 
-    .carousel-svg-container {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      background: linear-gradient(135deg, #DDA15E 0%, #BC6C25 100%);
-      height: 400px;
-      width: 100%;
-    }
-  </style>
+.logo-section h1{
+font-size:68px;
+font-weight:700;
+color:white;
+text-shadow:2px 2px 6px rgba(0,0,0,.25);
+}
+
+.logo-section p{
+font-size:20px;
+color:#7A5C61;
+}
+
+.carousel-svg-container{
+height:400px;
+display:flex;
+justify-content:center;
+align-items:center;
+background:linear-gradient(135deg,#FFDDE1,#FFF2A8);
+}
+
+.svg-container{
+height:240px;
+display:flex;
+justify-content:center;
+align-items:center;
+background:linear-gradient(135deg,#FFDDE1,#FFF2A8);
+border-radius:8px 8px 0 0;
+}
+
+footer{
+margin-top:50px;
+padding:25px;
+text-align:center;
+background:#FFDDE1;
+color:#7A5C61;
+font-weight:500;
+}
+
+</style>
+
 </head>
 
 <body>
 
-  <nav class="navbar navbar-dark navbar-custom fixed-top">
-    <div class="container-fluid">
-      <a class="navbar-brand d-flex align-items-center gap-2" href="#">
-        <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor" class="bi bi-cake2-fill" viewBox="0 0 16 16">
-          <path d="m2.899.804.595-.792.598.79A.747.747 0 0 1 4 1.806v4.886q-.532-.09-1-.201V1.813a.747.747 0 0 1-.1-1.01ZM13 1.806v4.685a15 15 0 0 1-1 .201v-4.88a.747.747 0 0 1-.1-1.007l.595-.792.[...]
-          <path d="M4.5 6.988V4.226a23 23 0 0 1 1-.114V7.16c0 .131.101.24.232.25l.231.017q.498.037 1.02.055l.258.01a.25.25 0 0 0 .26-.25V4.003a29 29 0 0 1 1 0V7.24a.25.25 0 0 0 .258.25l.259-.009q.[...]
-        </svg>
-        Plain
-      </a>
+<nav class="navbar navbar-expand-lg navbar-custom fixed-top">
 
-      <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasDarkNavbar" aria-controls="offcanvasDarkNavbar" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
+<div class="container-fluid">
 
-      <div class="offcanvas offcanvas-end text-bg-dark" tabindex="-1" id="offcanvasDarkNavbar" aria-labelledby="offcanvasDarkNavbarLabel">
-        <div class="offcanvas-header">
-          <h5 class="offcanvas-title" id="offcanvasDarkNavbarLabel">Confeitaria Plain</h5>
-          <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas" aria-label="Close"></button>
-        </div>
-        <div class="offcanvas-body">
-          <ul class="navbar-nav justify-content-end flex-grow-1 pe-3 mb-3">
-            <li class="nav-item">
-              <a class="nav-link active" aria-current="page" href="#">Início</a>
-            </li>
-            <li class="nav-item my-1">
-              <a class="btn btn-primary disabled" role="button" aria-disabled="true">
-                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-person-circle" viewBox="0 0 16 16">
-                  <path d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0"/>
-                  <path fill-rule="evenodd" d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8m8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1"/>
-                </svg> Entrar
-              </a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#">Opções</a>
-            </li>
-            <li class="nav-item dropdown">
-              <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                Sobre
-              </a>
-              <ul class="dropdown-menu dropdown-menu-dark">
-                <li><a class="dropdown-item" href="#">Serviço</a></li>
-                <li><a class="dropdown-item" href="#">Contato</a></li>
-                <li><hr class="dropdown-divider"></li>
-                <li><a class="dropdown-item" href="#">Avaliações</a></li>
-              </ul>
-            </li>
-          </ul>
-          
-          <form class="d-flex" role="search">
-            <input class="form-control me-2" type="search" placeholder="Pesquisa" aria-label="Search"/>
-            <button class="btn btn-success d-flex align-items-center justify-content-center" type="submit">
-              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-search" viewBox="0 0 16 16">
-                <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001q.044.06.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1 1 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0"[...]
-              </svg>
-            </button>
-          </form>
-        </div>
-      </div>
+<a class="navbar-brand d-flex align-items-center gap-2" href="#">
+
+<svg xmlns="http://www.w3.org/2000/svg" width="34" height="34" fill="currentColor" viewBox="0 0 16 16">
+
+<path d="M8 0a2 2 0 0 1 2 2v1h2a1 1 0 0 1 1 1v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V4a1 1 0 0 1 1-1h2V2a2 2 0 0 1 2-2zm1 3V2a1 1 0 0 0-2 0v1h2z"/>
+
+</svg>
+
+Bloom Brechó
+
+</a>
+
+<button class="navbar-toggler" type="button"
+data-bs-toggle="offcanvas"
+data-bs-target="#menu">
+
+<span class="navbar-toggler-icon"></span>
+
+</button>
+
+<div class="offcanvas offcanvas-end" id="menu">
+
+<div class="offcanvas-header">
+
+<h5>Bloom Brechó</h5>
+
+<button class="btn-close" data-bs-dismiss="offcanvas"></button>
+
+</div>
+
+<div class="offcanvas-body">
+
+<ul class="navbar-nav">
+
+<li class="nav-item">
+<a class="nav-link active" href="#">Início</a>
+</li>
+
+<li class="nav-item my-2">
+<a class="btn btn-primary disabled">
+Entrar
+</a>
+</li>
+
+<li class="nav-item">
+<a class="nav-link" href="#">Novidades</a>
+</li>
+
+<li class="nav-item dropdown">
+
+<a class="nav-link dropdown-toggle"
+data-bs-toggle="dropdown"
+href="#">
+
+Sobre
+
+</a>
+
+<ul class="dropdown-menu">
+
+<li><a class="dropdown-item" href="#">Contato</a></li>
+
+<li><a class="dropdown-item" href="#">Envios</a></li>
+
+<li><a class="dropdown-item" href="#">Avaliações</a></li>
+
+</ul>
+
+</li>
+
+</ul>
+
+<form class="d-flex mt-3">
+
+<input
+class="form-control me-2"
+type="search"
+placeholder="Pesquisar">
+
+<button class="btn btn-success">
+
+Pesquisar
+
+</button>
+
+</form>
+
+</div>
+
+</div>
+
+</div>
+
+</nav>
+
+<div class="logo-section">
+
+<h1>BLOOM</h1>
+
+<p>Moda sustentável • Estilo único • Peças com história</p>
+
+</div>
+
+<div id="carouselExampleFade"
+class="carousel slide carousel-fade mb-4">
+
+<div class="carousel-inner">
+    <div class="carousel-item active">
+
+<div class="carousel-svg-container">
+
+<svg width="300" height="300" viewBox="0 0 300 300">
+
+<!-- Blusa -->
+
+<path d="M90 70
+L120 45
+L180 45
+L210 70
+L195 95
+L180 80
+L180 200
+L120 200
+L120 80
+L105 95 Z"
+fill="#F8B6C2"/>
+
+<text x="150"
+y="260"
+font-size="24"
+font-weight="bold"
+text-anchor="middle"
+fill="#7A5C61">
+
+Blusa Feminina
+
+</text>
+
+</svg>
+
+</div>
+
+</div>
+
+<div class="carousel-item">
+
+<div class="carousel-svg-container">
+
+<svg width="300" height="300" viewBox="0 0 300 300">
+
+<!-- Calça -->
+
+<path d="M120 55
+L180 55
+L190 200
+L165 200
+L150 125
+L135 200
+L110 200 Z"
+fill="#8EC5FF"/>
+
+<text x="150"
+y="260"
+font-size="24"
+font-weight="bold"
+text-anchor="middle"
+fill="#7A5C61">
+
+Calça Jeans
+
+</text>
+
+</svg>
+
+</div>
+
+</div>
+<div class="carousel-item">
+
+<div class="carousel-svg-container">
+
+<svg width="300" height="300" viewBox="0 0 300 300">
+
+<!-- Short -->
+
+<rect x="95" y="80" width="110" height="70" rx="8" fill="#A7D8F5"/>
+
+<line x1="150" y1="80" x2="150" y2="150"
+stroke="#6B8BA4"
+stroke-width="3"/>
+
+<text x="150"
+y="260"
+font-size="24"
+font-weight="bold"
+text-anchor="middle"
+fill="#7A5C61">
+
+Short Jeans
+
+</text>
+
+</svg>
+
+</div>
+
+</div>
+
+<div class="carousel-item">
+
+<div class="carousel-svg-container">
+
+<svg width="300" height="300" viewBox="0 0 300 300">
+
+<!-- Saia -->
+
+<polygon points="110,80 190,80 220,180 80,180"
+fill="#F5A9C2"/>
+
+<text x="150"
+y="260"
+font-size="24"
+font-weight="bold"
+text-anchor="middle"
+fill="#7A5C61">
+
+Saia
+
+</text>
+
+</svg>
+
+</div>
+
+</div>
+
+<div class="carousel-item">
+
+<div class="carousel-svg-container">
+
+<svg width="300" height="300" viewBox="0 0 300 300">
+
+<!-- Tênis -->
+
+<path d="M70 170
+L130 170
+L160 145
+L220 165
+L230 185
+L70 185 Z"
+fill="#FFFFFF"
+stroke="#CFCFCF"
+stroke-width="2"/>
+
+<text x="150"
+y="260"
+font-size="24"
+font-weight="bold"
+text-anchor="middle"
+fill="#7A5C61">
+
+Tênis
+
+</text>
+
+</svg>
+
+</div>
+
     </div>
-  </nav>
+    <div class="carousel-item">
 
-  <!-- Logo Grande -->
-  <div class="logo-section">
-    <h1>PLAIN</h1>
-    <p>Confeitaria Artesanal com Amor</p>
-  </div>
+<div class="carousel-svg-container">
 
-  <!-- Carousel -->
-  <div id="carouselExampleFade" class="carousel slide carousel-fade mb-4">
-    <div class="carousel-inner">
-      <div class="carousel-item active">
-        <div class="carousel-svg-container">
-          <svg width="300" height="300" viewBox="0 0 300 300">
-            <!-- Bolo de Chocolate -->
-            <rect x="75" y="100" width="150" height="120" fill="#6B4423" rx="5"/>
-            <ellipse cx="150" cy="100" rx="75" ry="30" fill="#8B5A3C"/>
-            <ellipse cx="150" cy="220" rx="75" ry="25" fill="#5A2F1A"/>
-            
-            <!-- Cobertura -->
-            <circle cx="100" cy="60" r="15" fill="#8B4513"/>
-            <circle cx="150" cy="45" r="18" fill="#8B4513"/>
-            <circle cx="200" cy="60" r="15" fill="#8B4513"/>
-            
-            <!-- Texto -->
-            <text x="150" y="280" font-size="24" font-weight="bold" text-anchor="middle" fill="#4A3E3D">Bolo de Chocolate</text>
-          </svg>
-        </div>
-      </div>
-      <div class="carousel-item">
-        <div class="carousel-svg-container">
-          <svg width="300" height="300" viewBox="0 0 300 300">
-            <!-- Base da Torta (massa) -->
-            <ellipse cx="150" cy="210" rx="80" ry="30" fill="#D4A574"/>
-            <path d="M 70 210 L 80 150 L 220 150 L 230 210" fill="#E6CCB2"/>
-            
-            <!-- Cobertura branca -->
-            <ellipse cx="150" cy="145" rx="75" ry="20" fill="#FAF3E0"/>
-            
-            <!-- Frutas Vermelhas -->
-            <!-- Morangos -->
-            <circle cx="100" cy="130" r="12" fill="#E31C23"/>
-            <polygon points="100,120 105,115 95,115" fill="#00AA00"/>
-            
-            <circle cx="150" cy="120" r="12" fill="#E31C23"/>
-            <polygon points="150,110 155,105 145,105" fill="#00AA00"/>
-            
-            <circle cx="200" cy="130" r="12" fill="#E31C23"/>
-            <polygon points="200,120 205,115 195,115" fill="#00AA00"/>
-            
-            <!-- Framboesas -->
-            <circle cx="125" cy="155" r="9" fill="#C41E3A"/>
-            <circle cx="175" cy="155" r="9" fill="#C41E3A"/>
-            
-            <!-- Frutas menores vermelhas -->
-            <circle cx="85" cy="160" r="7" fill="#FF1744"/>
-            <circle cx="215" cy="160" r="7" fill="#FF1744"/>
-            
-            <!-- Texto -->
-            <text x="150" y="280" font-size="24" font-weight="bold" text-anchor="middle" fill="#4A3E3D">Torta com Frutas Vermelhas</text>
-          </svg>
-        </div>
-      </div>
-      <div class="carousel-item">
-        <div class="carousel-svg-container">
-          <svg width="300" height="300" viewBox="0 0 300 300">
-            <!-- Alfajor -->
-            <rect x="80" y="100" width="140" height="60" fill="#D4A574" rx="5"/>
-            <rect x="80" y="95" width="140" height="10" fill="#8B7355"/>
-            <rect x="80" y="160" width="140" height="10" fill="#8B7355"/>
-            
-            <!-- Cobertura de chocolate -->
-            <ellipse cx="150" cy="100" rx="70" ry="15" fill="#6B4423"/>
-            
-            <!-- Doce de leite visível -->
-            <rect x="90" y="115" width="120" height="30" fill="#C4893A" opacity="0.7"/>
-            
-            <!-- Texto -->
-            <text x="150" y="280" font-size="24" font-weight="bold" text-anchor="middle" fill="#4A3E3D">Alfajor Delicioso</text>
-          </svg>
-        </div>
-      </div>
-    </div>
-    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleFade" data-bs-slide="prev">
-      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-      <span class="visually-hidden">Previous</span>
-    </button>
-    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleFade" data-bs-slide="next">
-      <span class="carousel-control-next-icon" aria-hidden="true"></span>
-      <span class="visually-hidden">Next</span>
-    </button>
-  </div>
+<svg width="300" height="300" viewBox="0 0 300 300">
 
-  <div class="container text-center my-4">
+<!-- Sandália -->
+<path d="M90 180
+Q150 150 210 180"
+stroke="#C89B6D"
+stroke-width="10"
+fill="none"/>
 
-    <nav style="--bs-breadcrumb-divider: url(&#34;data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='8' height='8'%3E%3Cpath d='M2.5 0L1 1.5 3.5 4 1 6.5 2.5 8l4-4-4-4z' fill='%23[...]
-      <ol class="breadcrumb">
-        <li class="breadcrumb-item"><a href="#">Home</a></li>
-        <li class="breadcrumb-item active"><a href="#">Todos</a></li>
-        <li class="breadcrumb-item active" aria-current="page">Produtos</li>
-      </ol>
-    </nav>
+<circle cx="110" cy="175" r="8" fill="#F8B6C2"/>
+<circle cx="190" cy="175" r="8" fill="#F8B6C2"/>
 
-    <div class="dropdown my-3">
-      <a class="btn btn-secondary dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-        Categorias
-      </a>
-      <ul class="dropdown-menu dropdown-menu-center">
-        <li><a class="dropdown-item" href="#">Bolos</a></li>
-        <li><a class="dropdown-item" href="#">Tortas</a></li>
-        <li><a class="dropdown-item" href="#">Doces</a></li>
-      </ul>    
-    </div>
+<text x="150"
+y="260"
+font-size="24"
+font-weight="bold"
+text-anchor="middle"
+fill="#7A5C61">
 
-    <div class="card-group my-4">
-      <div class="card">
-        <div class="svg-container">
-          <svg width="200" height="200" viewBox="0 0 200 200">
-            <!-- Bolo -->
-            <rect x="50" y="70" width="100" height="80" fill="#6B4423" rx="3"/>
-            <ellipse cx="100" cy="70" rx="50" ry="20" fill="#8B5A3C"/>
-            <ellipse cx="100" cy="150" rx="50" ry="18" fill="#5A2F1A"/>
-            
-            <!-- Cobertura -->
-            <circle cx="70" cy="45" r="10" fill="#8B4513"/>
-            <circle cx="100" cy="35" r="12" fill="#8B4513"/>
-            <circle cx="130" cy="45" r="10" fill="#8B4513"/>
-          </svg>
-        </div>
-        <div class="card-body">
-          <h5 class="card-title">Bolos</h5>
-          <p class="card-text">Nossos bolos são feitos com ingredientes de qualidade e muito amor. Sabores clássicos e inovadores para todos os gostos e ocasiões especiais.</p>
-          <p class="card-text"><small class="text-body-secondary">Encomende agora</small></p>
-        </div>
-      </div>
-      <div class="card">
-        <div class="svg-container">
-          <svg width="200" height="200" viewBox="0 0 200 200">
-            <!-- Base da Torta -->
-            <ellipse cx="100" cy="145" rx="55" ry="20" fill="#D4A574"/>
-            <path d="M 45 145 L 52 100 L 148 100 L 155 145" fill="#E6CCB2"/>
-            
-            <!-- Cobertura branca -->
-            <ellipse cx="100" cy="95" rx="52" ry="15" fill="#FAF3E0"/>
-            
-            <!-- Frutas Vermelhas -->
-            <!-- Morangos -->
-            <circle cx="70" cy="85" r="8" fill="#E31C23"/>
-            <polygon points="70,78 73,75 67,75" fill="#00AA00"/>
-            
-            <circle cx="100" cy="78" r="8" fill="#E31C23"/>
-            <polygon points="100,71 103,68 97,68" fill="#00AA00"/>
-            
-            <circle cx="130" cy="85" r="8" fill="#E31C23"/>
-            <polygon points="130,78 133,75 127,75" fill="#00AA00"/>
-            
-            <!-- Framboesas -->
-            <circle cx="85" cy="105" r="6" fill="#C41E3A"/>
-            <circle cx="115" cy="105" r="6" fill="#C41E3A"/>
-          </svg>
-        </div>
-        <div class="card-body">
-          <h5 class="card-title">Tortas</h5>
-          <p class="card-text">Tortas sofisticadas e deliciosas para suas celebrações. Frutas frescas, coberturas irresistíveis e muito sabor em cada pedaço.</p>
-          <p class="card-text"><small class="text-body-secondary">Encomende agora</small></p>
-        </div>
-      </div>
-      <div class="card">
-        <div class="svg-container">
-          <svg width="200" height="200" viewBox="0 0 200 200">
-            <!-- Alfajor -->
-            <rect x="55" y="80" width="90" height="40" fill="#D4A574" rx="3"/>
-            <rect x="55" y="75" width="90" height="8" fill="#8B7355"/>
-            <rect x="55" y="120" width="90" height="8" fill="#8B7355"/>
-            
-            <!-- Cobertura -->
-            <ellipse cx="100" cy="75" rx="45" ry="10" fill="#6B4423"/>
-            
-            <!-- Doce de leite -->
-            <rect x="65" y="93" width="70" height="18" fill="#C4893A" opacity="0.7"/>
-          </svg>
-        </div>
-        <div class="card-body">
-          <h5 class="card-title">Alfajores e Doces</h5>
-          <p class="card-text">Alfajores crocantes com doce de leite, pão de mel e outras delícias. Perfeitos para presentear ou para suas próprias indulgências.</p>
-          <p class="card-text"><small class="text-body-secondary">Encomende agora</small></p>
-        </div>
-      </div>
-    </div>
+Sandália
 
-  </div>
+</text>
+
+</svg>
+
+</div>
+
+</div>
+
+<div class="carousel-item">
+
+<div class="carousel-svg-container">
+
+<svg width="300" height="300" viewBox="0 0 300 300">
+
+<!-- Bolsa -->
+
+<rect x="90" y="95"
+width="120"
+height="90"
+rx="12"
+fill="#F6D6A8"/>
+
+<path d="M120 95
+Q150 45 180 95"
+stroke="#A8784B"
+stroke-width="8"
+fill="none"/>
+
+<text x="150"
+y="260"
+font-size="24"
+font-weight="bold"
+text-anchor="middle"
+fill="#7A5C61">
+
+Bolsa
+
+</text>
+
+</svg>
+
+</div>
+
+</div>
+
+<div class="carousel-item">
+
+<div class="carousel-svg-container">
+
+<svg width="300" height="300" viewBox="0 0 300 300">
+
+<!-- Acessórios -->
+
+<circle cx="120" cy="120"
+r="28"
+fill="none"
+stroke="#F4D35E"
+stroke-width="8"/>
+
+<circle cx="180" cy="170"
+r="20"
+fill="none"
+stroke="#F8B6C2"
+stroke-width="8"/>
+
+<text x="150"
+y="260"
+font-size="24"
+font-weight="bold"
+text-anchor="middle"
+fill="#7A5C61">
+
+Acessórios
+
+</text>
+
+</svg>
+
+</div>
+
+</div>
+
+</div>
+
+<button class="carousel-control-prev"
+type="button"
+data-bs-target="#carouselExampleFade"
+data-bs-slide="prev">
+
+<span class="carousel-control-prev-icon"></span>
+
+</button>
+
+<button class="carousel-control-next"
+type="button"
+data-bs-target="#carouselExampleFade"
+data-bs-slide="next">
+
+<span class="carousel-control-next-icon"></span>
+
+</button>
+
+</div>
+
+<div class="container text-center my-4">
+
+<nav>
+
+<ol class="breadcrumb">
+
+<li class="breadcrumb-item">
+<a href="#">Início</a>
+</li>
+
+<li class="breadcrumb-item">
+<a href="#">Coleções</a>
+</li>
+
+<li class="breadcrumb-item active">
+Produtos
+</li>
+
+</ol>
+
+</nav>
+
+<div class="dropdown my-3">
+
+<a class="btn btn-secondary dropdown-toggle"
+data-bs-toggle="dropdown"
+href="#">
+
+Categorias
+
+</a>
+
+<ul class="dropdown-menu">
+
+<li><a class="dropdown-item" href="#">Roupas</a></li>
+
+<li><a class="dropdown-item" href="#">Calçados</a></li>
+
+<li><a class="dropdown-item" href="#">Bolsas</a></li>
+
+<li><a class="dropdown-item" href="#">Acessórios</a></li>
+
+</ul>
+
+</div>
+
+    <div class="card">
+
+<div class="svg-container">
+
+<svg width="180" height="180" viewBox="0 0 200 200">
+
+<path d="M60 40
+L80 25
+L120 25
+L140 40
+L130 60
+L120 50
+L120 150
+L80 150
+L80 50
+L70 60 Z"
+fill="#F8B6C2"/>
+
+</svg>
+
+</div>
+
+<div class="card-body">
+
+<h5 class="card-title">Roupas</h5>
+
+<p class="card-text">
+Blusas, calças, shorts e saias selecionados com muito carinho.
+Peças lindas, estilosas e sustentáveis.
+</p>
+
+<p class="card-text">
+<small class="text-body-secondary">
+Confira a coleção
+</small>
+</p>
+
+</div>
+
+</div>
+
+<div class="card">
+
+<div class="svg-container">
+
+<svg width="180" height="180" viewBox="0 0 200 200">
+
+<path d="M40 120
+L80 120
+L100 100
+L150 115
+L160 135
+L40 135 Z"
+fill="#FFFFFF"
+stroke="#CFCFCF"
+stroke-width="2"/>
+
+</svg>
+
+</div>
+
+<div class="card-body">
+
+<h5 class="card-title">Calçados</h5>
+
+<p class="card-text">
+Tênis e sandálias em ótimo estado,
+confortáveis e perfeitos para completar seu look.
+</p>
+
+<p class="card-text">
+
+<small class="text-body-secondary">
+Veja os modelos
+</small>
+
+</p>
+
+</div>
+
+</div>
+
+<div class="card">
+
+<div class="svg-container">
+
+<svg width="180" height="180" viewBox="0 0 200 200">
+
+<rect x="50"
+y="70"
+width="100"
+height="70"
+rx="10"
+fill="#F6D6A8"/>
+
+<path d="M75 70
+Q100 35 125 70"
+stroke="#A8784B"
+stroke-width="7"
+fill="none"/>
+
+</svg>
+
+</div>
+
+<div class="card-body">
+
+<h5 class="card-title">Bolsas e Acessórios</h5>
+
+<p class="card-text">
+Bolsas, colares, brincos, pulseiras e muito mais
+para deixar seu visual ainda mais especial.
+</p>
+
+<p class="card-text">
+
+<small class="text-body-secondary">
+Novidades toda semana
+</small>
+
+</p>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+<footer>
+
+<h5>Bloom Brechó 🌸</h5>
+
+<p>
+Moda sustentável • Peças únicas • Atendimento com carinho
+</p>
+
+<p>
+© 2026 Bloom Brechó - Todos os direitos reservados.
+</p>
+
+</footer>
 
 </body>
-</html>
+
+                                 </html>
+<div class="card-group my-4">
